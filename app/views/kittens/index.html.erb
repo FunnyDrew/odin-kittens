@@ -1,0 +1,9 @@
+<h1>Kittens</h1>
+<p>Find all kittens here</p>
+<ul>
+  <% @kittens.each do |kitten|%>
+  <li>
+    <%= kitten.name %>
+  </li>
+  <%end%>
+</ul>
