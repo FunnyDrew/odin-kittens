@@ -3,7 +3,8 @@
 <ul>
   <% @kittens.each do |kitten|%>
   <li>
-    <%= link_to kitten.name, @kitten %>
+  <p><%= kitten.id %></p>
+    <%= link_to kitten.name, kitten %>
   </li>
   <%end%>
 </ul>
