@@ -1,10 +1,11 @@
 class KittensController < ApplicationController
   def create
-    puts params  
-    puts "##################"
-    puts params
-    some = params.require(:kitten).permit(:age)
-    puts params.class
+    new_kitten = Kitten.new(white_data)
+    if new_kitten.save
+      redirect_to root_path
+    else
+      "ooops"
+    end
   end
   def index
     @kittens = Kitten.all
@@ -22,7 +23,7 @@ class KittensController < ApplicationController
   def edit
   end
 
-  def white_data(params)
-    
+  def white_data
+    params.require(:kitten).permit(:name, :age)    
   end
 end
