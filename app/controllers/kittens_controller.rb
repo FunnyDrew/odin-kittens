@@ -1,6 +1,10 @@
 class KittensController < ApplicationController
   def create
     puts params  
+    puts "##################"
+    puts params
+    some = params.require(:kitten).permit(:age)
+    puts params.class
   end
   def index
     @kittens = Kitten.all
@@ -8,10 +12,7 @@ class KittensController < ApplicationController
 
   def new
     @kitten = Kitten.new()
-    puts "##################"
-    puts params
-    some = white_data(params)
-    puts some
+    
   end
 
   def show
