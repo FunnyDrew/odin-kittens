@@ -5,6 +5,8 @@
   <li>
   <p><%= kitten.id %></p>
     <%= link_to kitten.name, kitten %>
+    <%=kitten.name%>
+    <%=link_to "Delete", kitten_path(kitten), method: :delete%>
   </li>
   <%end%>
 </ul>

@@ -1,26 +1,37 @@
 class KittensController < ApplicationController
   def create
-    new_kitten = Kitten.new(white_data)
-    if new_kitten.save
+    @kitten = Kitten.new(white_data)
+    if @kitten.save
       redirect_to root_path
     else
-      "ooops"
+      render :new
     end
   end
   def index
-    @kittens = Kitten.all
+     @kittens = Kitten.all
+
+     respond_to do |format|
+      format.html index.html.erb      
+      format.json { render :json => @kittens }
+    end
   end
 
   def new
-    @kitten = Kitten.new()
-    
+    @kitten = Kitten.new    
   end
 
   def show
-    
+    @kitten = Kitten.find(params[:id])    
   end
 
   def edit
+
+  end
+  
+  def destroy
+    @kitten = Kitten.find(params[:id])
+    @kitten.destroy
+    redirect_to root_path        
   end
 
   def white_data

@@ -1,10 +1,7 @@
-<p></p>
-<p></p>
-<p></p>
 <%= form_with model: @kitten do |form| %>
-<%= form.text_field :title%>
-<%= form.label :title, "Title"%>
+<%= form.text_field :name%>
+<%= form.label :name, "Enter Kitty Name"%>
 <%= form.text_field :age%>
-<%= form.label :title, "Age"%>
+<%= form.label :age, "Enter thier name"%>
 <%= form.submit  "Create"%>
 <% end %>
