@@ -22,8 +22,8 @@ class KittensController < ApplicationController
 
   def show
     @kitten = Kitten.find(params[:id]) 
-    respond_to do |fromat|
-      format.html
+    respond_to do |format|
+      format.html 
       format.json {render :json => @kitten}
     end 
   end
